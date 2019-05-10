@@ -1,15 +1,11 @@
 package com.atos.boyan.business;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -18,7 +14,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.atos.boyan.data.ItemRepository;
 import com.atos.boyan.model.Item;
-import com.atos.boyan.model.SomeDataService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ItemBusinessServiceMockTest {
