@@ -15,14 +15,9 @@ public class SomeBusinessImpl {
 	public int calculateSum(int[] data) {
 		return Arrays.stream(data).reduce(Integer::sum).orElse(0);
 	}
-   // Convert it with func programming
 	public int calculateSumUsingDataService() {
-		int sum = 0;
 		int[] data = someDataservice.retrieveAllData();
-		for (int value : data) {
-			sum += value;
-		}
-		return sum;
+		return Arrays.stream(data).reduce(0, (acc, value) -> acc + value);
 	}
 
 }
