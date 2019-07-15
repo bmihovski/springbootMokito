@@ -1,4 +1,4 @@
-package com.atos.boyan;
+package com.boyan.unittesting;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootUnitApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootUnitApplication.class, args);
+		SpringApplication.run(SpringApplication.class, args);
 	}
 
 }
