@@ -17,4 +17,5 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
