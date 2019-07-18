@@ -1,7 +1,6 @@
 package com.boyan.unittesting.business;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -9,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.boyan.unittesting.data.SomeDataService;
@@ -24,7 +24,8 @@ public class SomeBusinessMockTest {
 		this.someBusinessImpl = someBusinessImpl;
 	}
 
-	SomeDataService mockedDataService = mock(SomeDataService.class);
+	@MockBean
+	SomeDataService mockedDataService;
 	
 	@Before
 	public void setUp() {
