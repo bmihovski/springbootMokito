@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,39 +24,32 @@ public class SomeBusinessMockTest {
 		this.someBusinessImpl = someBusinessImpl;
 	}
 
+	SomeDataService mockedDataService = mock(SomeDataService.class);
+	
+	@Before
+	public void setUp() {
+		someBusinessImpl.setSomeDataService(mockedDataService);
+	}
+	
+	
 	@Test
 	public void calculateSomeBusinessImpl_basic() {
-		SomeDataService mockedDataService = mock(SomeDataService.class);
 		when(mockedDataService.retrieveAllData()).thenReturn(new int[] {1, 2, 3});
 		
-		someBusinessImpl.setSomeDataService(mockedDataService);
-		
-		int actualResult = someBusinessImpl.calculateSumUsingDataService();
-		
-		assertThat(actualResult).isEqualTo(6);
+		assertThat(someBusinessImpl.calculateSumUsingDataService()).isEqualTo(6);
 	}
 
 	@Test
 	public void calculateSomeBusinessImpl_no_value() {
-		SomeDataService mockedDataService = mock(SomeDataService.class);
 		when(mockedDataService.retrieveAllData()).thenReturn(new int[] {});
 		
-		someBusinessImpl.setSomeDataService(mockedDataService);
-		
-		int actualResult = someBusinessImpl.calculateSumUsingDataService();
-		
-		assertThat(actualResult).isEqualTo(0);
+		assertThat(someBusinessImpl.calculateSumUsingDataService()).isEqualTo(0);
 	}
 	
 	@Test
 	public void calculateSomeBusinessImpl_single_value() {
-		SomeDataService mockedDataService = mock(SomeDataService.class);
 		when(mockedDataService.retrieveAllData()).thenReturn(new int[] {5});
 		
-		someBusinessImpl.setSomeDataService(mockedDataService);
-		
-		int actualResult = someBusinessImpl.calculateSumUsingDataService();
-		
-		assertThat(actualResult).isEqualTo(5);
+		assertThat(someBusinessImpl.calculateSumUsingDataService()).isEqualTo(5);
 	}
 }
