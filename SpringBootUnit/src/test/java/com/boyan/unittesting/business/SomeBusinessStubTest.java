@@ -35,8 +35,12 @@ class SomeDataServiceStubEmpty implements SomeDataService {
 @SpringBootTest
 public class SomeBusinessStubTest {
 
+	private SomeBusinessImpl someBusinessImpl;
+	
 	@Autowired
-	SomeBusinessImpl someBusinessImpl;
+	public void setSomeBusinessStubTest(SomeBusinessImpl someBusinessImpl) {
+		this.someBusinessImpl = someBusinessImpl;
+	}
 
 	@Test
 	public void calculateSumDataService_basic() {

@@ -14,8 +14,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class SomeBusinessTest {
 	
+	private SomeBusinessImpl someBusinessImpl;
+	
 	@Autowired
-	SomeBusinessImpl someBusinessImpl;
+	public void setSomeBusinessImpl(SomeBusinessImpl someBusinessImpl) {
+		this.someBusinessImpl = someBusinessImpl;
+	}
 	
 
 	@Test
