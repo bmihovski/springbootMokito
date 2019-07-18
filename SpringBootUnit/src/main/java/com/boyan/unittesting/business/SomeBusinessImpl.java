@@ -2,7 +2,6 @@ package com.boyan.unittesting.business;
 
 import java.util.Arrays;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.boyan.unittesting.data.SomeDataService;
@@ -12,7 +11,7 @@ public class SomeBusinessImpl {
 	
 	private SomeDataService someDataService;
 
-	@Autowired
+	
 	public void setSomeDataService(SomeDataService someDataService) {
 		this.someDataService = someDataService;
 	}
